@@ -1,35 +1,65 @@
-# AstroZen - Personal Portfolio Website
+# Portfolio Website — Sushanth Kakarlapudi
 
-AstroZen is a minimalist, accessible and responsive portfolio template for your personal portfolio website. It is built with Astro and TailwindCSS.
+A personal portfolio website built with [Astro](https://astro.build/) and [TailwindCSS](https://tailwindcss.com/), showcasing my experience, AI projects, skills, and certifications.
 
-![zen-og](https://github.com/user-attachments/assets/7a72aaae-6652-4cd0-becc-8e6a3c224993)
+## Sections
 
-> [!NOTE]
-> The information contained in this template, including names, images, and content, is entirely fictitious and is intended solely to give the design a realistic appearance. Any coincidence with real-life people, events, or situations is purely coincidental. It is recommended that you replace this information with your own information.
+- **Hero** — Introduction with name, title, and professional summary
+- **Experience** — Work history at Walmart Global Tech, American Airlines, USAA, and AT&T
+- **Projects** — Featured AI projects: DocPilot (RAG), LLM Task Manager (Agentic AI), LuminaAI (Inference Engine)
+- **Skills & Certifications** — Technical skills across 6 categories + professional certifications
+- **About** — Bio and background
 
-## 🔥 Features
+## Features
 
-- [x] Minimalist design. clean and simple
-- [x] Mobile-first responsive layout
-- [x] SEO-friendly and accessible
-- [x] Easy to customize with a single configuration file
+- Minimalist, dark-themed design
+- Mobile-first responsive layout
+- SEO-friendly with Open Graph and Twitter card meta tags
+- Single configuration file for all content (`src/config/index.ts`)
+- Sticky project cards with scroll animation
+- Accessible navigation with mobile menu
 
-## ✅ Lighthouse Score
+## Getting Started
 
-![performance](https://github.com/user-attachments/assets/4f95e2ca-03f9-4996-9e34-dcd179194c58)
+Clone the repository and install dependencies:
 
-## 🚀 Getting Started
-
-Clone this repository to your local machine using Git.
-
-```scheme
-git clone https://github.com/immois/astro-zen.git
-cd astro-zen
+```bash
+git clone https://github.com/shawnk1188/portfolio-website.git
+cd portfolio-website
 ```
 
-| Command        | Action                                       |
-| :------------- | :------------------------------------------- |
-| `pnpm install` | Installs dependencies                        |
-| `pnpm dev`     | Starts local dev server at `localhost:4321`  |
-| `pnpm build`   | Build your production site to `./dist/`      |
-| `pnpm preview` | Preview your build locally, before deploying |
+| Command         | Action                                       |
+| :-------------- | :------------------------------------------- |
+| `pnpm install`  | Install dependencies                         |
+| `pnpm dev`      | Start local dev server at `localhost:4321`    |
+| `pnpm build`    | Build production site to `./dist/`            |
+| `pnpm preview`  | Preview build locally before deploying        |
+
+## Customization
+
+All site content is managed in a single file: `src/config/index.ts`
+
+- **Hero**: Name, title, summary, email
+- **Experience**: Company, role, dates, bullet points
+- **Projects**: Name, description, GitHub link, preview image
+- **Skills**: Category groupings with technology tags
+- **About**: Bio text and profile image
+
+Images are stored in the `public/` directory.
+
+## Deployment
+
+This site is configured for deployment on [Vercel](https://vercel.com/):
+
+```bash
+pnpm build
+```
+
+Or connect your GitHub repository to Vercel for automatic deployments on push.
+
+## Tech Stack
+
+- [Astro](https://astro.build/) — Static site framework
+- [TailwindCSS v4](https://tailwindcss.com/) — Utility-first CSS
+- [TypeScript](https://www.typescriptlang.org/) — Type safety
+- [Gabarito](https://fonts.google.com/specimen/Gabarito) + [Be Vietnam Pro](https://fonts.google.com/specimen/Be+Vietnam+Pro) — Typography
