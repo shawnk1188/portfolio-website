@@ -1,0 +1,47 @@
+---
+import Section from "./Section.astro";
+import type { SkillsProps } from "@types";
+
+interface Props {
+  skills: SkillsProps;
+}
+
+const { skills } = Astro.props;
+---
+
+<Section text="Skills & Certifications" href="skills">
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+    {
+      skills.categories.map(({ title, items }) => (
+        <div class="rounded-xl border border-neutral/20 bg-[#1c232d]/60 px-5 py-6">
+          <h3 class="mb-3 font-serif text-lg font-semibold text-primary">
+            {title}
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {items.map((item) => (
+              <span class="rounded-full border border-neutral/20 bg-black px-3 py-1 text-xs text-neutral">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="mt-10">
+    <h3 class="mb-4 font-serif text-2xl font-semibold text-white">
+      Certifications
+    </h3>
+    <div class="flex flex-wrap gap-3">
+      {
+        skills.certifications.map((cert) => (
+          <span class="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm text-primary">
+            <img src="/check.svg" alt="" class="h-4 w-4" />
+            {cert}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+</Section>
