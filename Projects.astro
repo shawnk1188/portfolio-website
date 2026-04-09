@@ -43,13 +43,26 @@ const { projects } = Astro.props;
               </div>
             </div>
             <div class="flex items-end justify-end overflow-hidden">
-              <Image
-                class="h-full w-[95%] rounded-ss-xl rounded-ee-2xl object-none object-left-top sm:h-[85%] sm:w-full"
-                src={image}
-                alt={name}
-                width="736"
-                height="483"
-              />
+              {/* TODO: Add a project screenshot image in the config to replace this placeholder.
+                  Once you set the image property in config, it will render here automatically. */}
+              {image ? (
+                <Image
+                  class="h-full w-[95%] rounded-ss-xl rounded-ee-2xl object-none object-left-top sm:h-[85%] sm:w-full"
+                  src={image}
+                  alt={name}
+                  width="736"
+                  height="483"
+                />
+              ) : (
+                <div class="flex h-full w-[95%] items-center justify-center rounded-ss-xl rounded-ee-2xl bg-[#0e141b] sm:h-[85%] sm:w-full">
+                  <div class="text-center">
+                    <svg class="mx-auto mb-3 h-16 w-16 text-primary/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0 0 22.5 18.75V5.25A2.25 2.25 0 0 0 20.25 3H3.75A2.25 2.25 0 0 0 1.5 5.25v13.5A2.25 2.25 0 0 0 3.75 21Z" />
+                    </svg>
+                    <p class="text-sm text-neutral/50">Screenshot coming soon</p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
