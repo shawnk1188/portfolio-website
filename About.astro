@@ -11,16 +11,31 @@ const { description, image, name } = Astro.props;
 <Section text="About Me" href="about">
   <div class="flex flex-col items-center gap-12 md:flex-row md:gap-8">
     <p class="w-auto text-base text-neutral md:pr-5">{description}</p>
-    <div
-      class="h-80 w-64 flex-shrink-0 rotate-[5deg] bg-white p-4 md:rotate-[7deg]"
-    >
-      <Image
-        class="object-cover"
-        src={image}
-        width="260"
-        height="260"
-        alt={name}
-      />
-    </div>
+    {/* TODO: Add your profile photo in the config to replace this placeholder.
+        Once you set the image property in about config, it will render here automatically. */}
+    {image ? (
+      <div
+        class="h-80 w-64 flex-shrink-0 rotate-[5deg] bg-white p-4 md:rotate-[7deg]"
+      >
+        <Image
+          class="object-cover"
+          src={image}
+          width="260"
+          height="260"
+          alt={name}
+        />
+      </div>
+    ) : (
+      <div
+        class="flex h-80 w-64 flex-shrink-0 rotate-[5deg] items-center justify-center rounded-xl border border-neutral/20 bg-[#1c232d]/60 md:rotate-[7deg]"
+      >
+        <div class="text-center">
+          <div class="mx-auto mb-3 flex h-20 w-20 items-center justify-center rounded-full bg-primary/20 text-3xl font-bold text-primary">
+            SK
+          </div>
+          <p class="text-xs text-neutral/50">Photo coming soon</p>
+        </div>
+      </div>
+    )}
   </div>
 </Section>
